@@ -90,11 +90,11 @@ def agency_names() -> dict[str, list[str]]:
             'sortlist' : ['epsilon', 'epsilon-15'],
             'other' : ['Epsilon', 'epsilon'],
         },
-        'starcomm': {
+        'starcom': {
             'linkedin' : ['starcom1'],
-            'goodfirms' : ['starcomm'],
-            'sortlist' : ['starcomm', 'starcom-gb'],
-            'other' : ['Starcomm', 'starcomm'],
+            'goodfirms' : ['starcom'],
+            'sortlist' : ['starcom', 'starcom-gb'],
+            'other' : ['Starcom', 'starcom'],
         },
         'mediacom': {
             'linkedin' : ['mediacom'],
