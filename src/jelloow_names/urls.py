@@ -16,34 +16,46 @@ import jelloow_names.names as n
 
 def agency_websites() -> list[str]:
     
-    # currently used for testing purposes
-    return ['https://www.jelloow.com']
+    urls = {}
+    for agency in n.agency_names().values():
+        for url in agency.get('website'):
+            urls[f'{url}'] = agency
+
+    return urls
 
 def agency_goodfirms() -> list[str]:
-    names = n.agency_names()
+
     urls = {}
-    for agency in names:
-        for alias in names[agency]['goodfirms']:
+    for agency in n.agency_names().values():
+        for alias in agency.get('goodfirms'):
             urls[f'https://www.goodfirms.co/company/{alias}'] = agency
 
     return urls
 
 def agency_sortlist() -> dict[str, str]:
-    names = n.agency_names()
+
     urls = {}
-    for agency in names:
-        for alias in names[agency]['sortlist']:
+    for agency in n.agency_names().values():
+        for alias in agency.get('sortlist'):
             urls[f'https://www.sortlist.com/agency/{alias}'] = agency
     
     return urls
 
 def agency_linkedin() -> list[str]:
-    names = n.agency_names()
+
     urls = {}
-    for agency in names:
-        for alias in names[agency]['linkedin']:
+    for agency in n.agency_names().values():
+        for alias in agency.get('linkedin'):
             urls[f'https://www.linkedin.com/company/{alias}'] = agency
 
+    return urls
+
+def agency_urls() -> list[str]:
+    urls = {}
+    urls.update(agency_websites())
+    urls.update(agency_goodfirms())
+    urls.update(agency_sortlist())
+    urls.update(agency_linkedin())
     return urls
 
 def brand_urls() -> list[str]:
