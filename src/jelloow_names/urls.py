@@ -17,36 +17,36 @@ import jelloow_names.names as n
 def agency_websites() -> list[str]:
     
     urls = {}
-    for agency in n.agency_names().values():
+    for name, agency in n.agency_names().items():
         for url in agency.get('website'):
-            urls[f'{url}'] = agency
+            urls[f'{url}'] = name
 
     return urls
 
 def agency_goodfirms() -> list[str]:
 
     urls = {}
-    for agency in n.agency_names().values():
+    for name, agency in n.agency_names().items():
         for alias in agency.get('goodfirms'):
-            urls[f'https://www.goodfirms.co/company/{alias}'] = agency
+            urls[f'https://www.goodfirms.co/company/{alias}'] = name
 
     return urls
 
 def agency_sortlist() -> dict[str, str]:
 
     urls = {}
-    for agency in n.agency_names().values():
+    for name, agency in n.agency_names().items():
         for alias in agency.get('sortlist'):
-            urls[f'https://www.sortlist.com/agency/{alias}'] = agency
+            urls[f'https://www.sortlist.com/agency/{alias}'] = name
     
     return urls
 
 def agency_linkedin() -> list[str]:
 
     urls = {}
-    for agency in n.agency_names().values():
+    for name, agency in n.agency_names().items():
         for alias in agency.get('linkedin'):
-            urls[f'https://www.linkedin.com/company/{alias}'] = agency
+            urls[f'https://www.linkedin.com/company/{alias}'] = name
 
     return urls
 
